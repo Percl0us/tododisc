@@ -182,7 +182,7 @@ const commands = [
     .addStringOption((opt) =>
       opt
         .setName("duration")
-        .setDescription("When it is due (natural language)")
+        .setDescription("When it is due ")
         .setRequired(true)
     )
     .addStringOption((opt) =>
@@ -445,7 +445,7 @@ client.on("interactionCreate", async (interaction) => {
       if (!rows || rows.length === 0)
         return interaction.reply({ content: "No items 📭", ephemeral: false });
 
-      let out = `**geet or mere chote chote kaams (${scope})**\n`;
+      let out = `**geet or mere chote chote kaams (${scope=="shared"?"":scope})**\n`;
       for (let i = 0; i < rows.length; i++) {
         const r = rows[i];
         const pos = i + 1; // 1-based position
@@ -618,7 +618,7 @@ async function startReminderLoop() {
                 item.content
               }" (${displayRef}) is due at ${new Date(
                 item.deadline
-              ).toLocaleString()}.\nMark done with: ${doneRef}`
+              ).toLocaleString()}.\nkardiya to done karo jii: ${doneRef}`
             );
           } catch (err) {
             console.warn("reminder send failed", err.message);
