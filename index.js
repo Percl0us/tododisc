@@ -445,7 +445,7 @@ client.on("interactionCreate", async (interaction) => {
       if (!rows || rows.length === 0)
         return interaction.reply({ content: "No items 📭", ephemeral: false });
 
-      let out = `**geet or mere chote chote kaams (${scope=="shared"?"":scope})**\n`;
+      let out = `**geet or mere chote chote kaams (${scope=="shared"?"muaah":scope})**\n`;
       for (let i = 0; i < rows.length; i++) {
         const r = rows[i];
         const pos = i + 1; // 1-based position
