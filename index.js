@@ -532,7 +532,7 @@ client.on("interactionCreate", async (interaction) => {
       const realId = await getItemIdByPosition(listId, position);
       if (!realId) {
         return interaction.reply({
-          content: `Could not delete item ${position}. Make sure the number is correct for your ${scope} list.`,
+          content: `Could not delete item ${position}. Make sure the number is correct for your ${scope=='shared'?"mui mui":scope} list.`,
           ephemeral: false,
         });
       }
